@@ -161,10 +161,11 @@ public final class DiffParser {
 
         let oldLine = state.currentOldLine
         let newLine = state.currentNewLine
+        text.remove(at: 0)
 
         var lineInfo: [String: Any] = [:]
         lineInfo["type"] = type.rawValue
-        lineInfo["text"] = line
+        lineInfo["text"] = line.dropFirst(1)
         lineInfo["newLine"] = newLine
         lineInfo["oldLine"] = oldLine
         lineInfo["noNewLine"] = false
