@@ -149,7 +149,7 @@ public final class DiffParser {
         hunkInfo["oldLineSpan"] = Int(oldHunkInfo[1])!
         hunkInfo["newLineStart"] = Int(newHunkInfo[0])!
         hunkInfo["newLineSpan"] = Int(newHunkInfo[1])!
-        hunkInfo["text"] = remainingText
+        hunkInfo["text"] = remainingText.dropFirst(1)
 
         return hunkInfo
     }
