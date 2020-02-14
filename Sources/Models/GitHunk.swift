@@ -10,7 +10,7 @@ import Foundation
 
 public struct GitHunk: Codable {
 
-    private var text: String
+    public var text: String
 
     public var oldLineStart = 0
 
