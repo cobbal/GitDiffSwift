@@ -51,7 +51,7 @@ public final class DiffParser {
                 changes.removeAll()
                 diffInfo.removeAll()
             } catch {
-                print(error.localizedDescription)
+                print(error)
             }
         }
 
