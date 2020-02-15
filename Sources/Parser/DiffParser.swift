@@ -146,9 +146,9 @@ public final class DiffParser {
 
         var hunkInfo: [String: Any] = [:]
         hunkInfo["oldLineStart"] = Int(oldHunkInfo[0])!
-        hunkInfo["oldLineSpan"] = Int(oldHunkInfo[1])!
+        hunkInfo["oldLineSpan"] = oldHunkInfo.count == 1 ? 1 : Int(oldHunkInfo[1])!
         hunkInfo["newLineStart"] = Int(newHunkInfo[0])!
-        hunkInfo["newLineSpan"] = Int(newHunkInfo[1])!
+        hunkInfo["newLineSpan"] = newHunkInfo.count == 1 ? 1 : Int(newHunkInfo[1])!
         hunkInfo["text"] = remainingText.dropFirst(1)
 
         return hunkInfo
