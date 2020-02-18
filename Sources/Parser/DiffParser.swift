@@ -161,10 +161,10 @@ public final class DiffParser {
     internal func parseDiffLine(_ line: String) -> [String: Any] {
         let type = diffType(for: line)
 
-        state.updateForLine(type: type)
-
         let oldLine = state.currentOldLine
         let newLine = state.currentNewLine
+
+        state.updateForLine(type: type)
 
         var lineInfo: [String: Any] = [:]
         lineInfo["type"] = type.rawValue

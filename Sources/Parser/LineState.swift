@@ -8,15 +8,10 @@
 import Foundation
 
 internal struct LineState {
-    internal var isFirstLine = true
     internal var currentOldLine = 0
     internal var currentNewLine = 0
 
     internal mutating func updateForLine(type: LineType) {
-        guard !isFirstLine else {
-            isFirstLine = false
-            return
-        }
         switch type {
         case .unchanged:
             currentOldLine += 1
@@ -29,7 +24,6 @@ internal struct LineState {
     }
 
     internal mutating func reset(newLineStart: Int, oldLineStart: Int) {
-        self.isFirstLine = true
         self.currentNewLine = newLineStart
         self.currentOldLine = oldLineStart
     }
